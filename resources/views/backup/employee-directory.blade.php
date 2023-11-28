@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/public">
+  <!-- Plugins -->
+  <link href="assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+  <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+  <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+  <link href="assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+  <link href="assets/plugins/highcharts/css/highcharts.css" rel="stylesheet" />
+  <!-- Loader -->
+  <link href="assets/css/pace.min.css" rel="stylesheet" />
+  <script src="assets/js/pace.min.js"></script>
+  <!-- Bootstrap CSS -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/bootstrap-extended.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link href="assets/css/app.css" rel="stylesheet">
+  <link href="assets/css/icons.css" rel="stylesheet">
+  <!-- Theme Style CSS -->
+  <link rel="stylesheet" href="assets/css/dark-theme.css" />
+  <link rel="stylesheet" href="assets/css/semi-dark.css" />
+  <link rel="stylesheet" href="assets/css/header-colors.css" />
+
+  <!-- DataTable CSS -->
+  <link href="assets/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/img/logo-2.png" type="image/png">
+  <title>FCRMSys | Admin Dashboard</title>
+
+  <style>
+    .btn-success {
+      background-color: #9EB384;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.75rem;
+      line-height: 1.5;
+      border-radius: 0.2rem;
+      border-color: #9EB384;
+    }
+
+    .btn-primary {
+      background-color: #91C8E4;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.75rem;
+      line-height: 1.5;
+      border-radius: 0.2rem;
+      border-color: #91C8E4;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Wrapper -->
+  <div class="wrapper">
+    <!-- Sidebar Wrapper -->
+    @include('admin.assets.sidebar')
+    <!-- End Sidebar Wrapper -->
+
+    <!-- Topbar -->
+    @include('admin.assets.topbar')
+    <!-- End Topbar -->
+
+    <!-- Page Wrapper -->
+    <div class="page-wrapper">
+      <div class="page-content">
+        <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+          <div class="breadcrumb-title pe-3"><b>Employee Management</b></div>
+          <div class="ps-3">
+            <nav aria-label="Breadcrumb Navigation">
+              <ol class="breadcrumb mb-0 p-0">
+                <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i>Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Employee Table</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+
+        <hr />
+        <div class="card">
+          <div class="card-body">
+            <div class="table-responsive">
+              <table id="example" class="table table-striped table-bordered" style="width:100%">
+                <thead>
+                  <tr scope="col">
+                    <th>ID</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Position</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @foreach($employeeList as $employee)
+                  <tr class="align-middle">
+                    <td>{{ $employee->id }}</td>
+                    <td><img src="{{ asset('employeeprofile/' . $employee->image) }}" alt="{{ $employee->name }}"
+                        width="50" height="50"></td>
+                    <td>{{ $employee->firstname }} {{ $employee->lastname }}</td>
+                    <td>{{ $employee->email }}</td>
+                    <td>{{ $employee->phone }}</td>
+                    <td>{{ $employee->position }}</td>
+                    <td>
+                      <a href="{{ route('edit_employee', ['id' => $employee->id]) }}"
+                        class="btn btn-xs btn-success">
+                        <i class="bx bx-edit-alt"></i> Edit
+                      </a>
+                      <a href="{{ route('view-employee-profile', ['id' => $employee->id]) }}"
+                        class="btn btn-xs btn-primary">
+                        <i class="bx bx-file"></i> View
+                      </a>
+                    </td>
+                  </tr>
+                  @endforeach
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <h6 class="mb-0 text-uppercase">DataTable Import</h6>
+        <hr />
+        <div class="card">
+          <div class="card-body">
+            <div class="table-responsive">
+              <table id="example2" class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay toggle-icon"></div>
+    <!-- End Overlay -->
+
+    <!-- Back To Top Button -->
+    <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+    <!-- End Back To Top Button -->
+
+    <footer class="page-footer">
+      <p class="mb-0">Copyright © 2023. All right reserved.</p>
+    </footer>
+  </div>
+  <!-- End Wrapper -->
+
+  <!-- Bootstrap JS -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <!-- Plugins -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
+  <script src="assets/plugins/metismenu/js/metisMenu.min.js"></script>
+  <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+  <!-- Vector map JavaScript -->
+  <script src="assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js"></script>
+  <script src="assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js"></script>
+  <!-- Highcharts JS -->
+  <script src="assets/plugins/highcharts/js/highcharts.js"></script>
+  <script src="assets/plugins/apexcharts-bundle/js/apexcharts.min.js"></script>
+  <script src="assets/js/index2.js"></script>
+  <!-- App JS -->
+  <script src="assets/js/app.js"></script>
+
+  <!-- jQuery DataTables and DataTables Bootstrap 5 JavaScript -->
+  <script src="assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
+  <script src="assets/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      $('#example').DataTable();
+    });
+  </script>
+  <script>
+    $(document).ready(function() {
+      var table = $('#example2').DataTable({
+        lengthChange: false,
+        buttons: ['copy', 'excel', 'pdf', 'print']
+      });
+
+      table.buttons().container()
+        .appendTo('#example2_wrapper .col-md-6:eq(0)');
+    });
+  </script>
+</body>
+
+</html>

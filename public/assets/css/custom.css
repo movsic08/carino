@@ -1,0 +1,24 @@
+.nav.nav-tabs {
+  white-space: nowrap;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.nav.nav-tabs li {
+  flex: 1;
+  overflow: hidden;
+}
+
+.nav.nav-tabs a {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: block;
+}
+
+.nav-tabs .nav-item.active a {
+  white-space: normal;
+  text-overflow: unset;
+  overflow: visible;
+}

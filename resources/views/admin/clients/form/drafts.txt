@@ -1,0 +1,179 @@
+<div class="medical-form-4" style="margin-left: 20px; margin-right: 20px;">
+<div class="row">
+  <div class="col">
+    <div class="mb-3">
+      <label class="form-label">Weight</label>
+      <div class="input-group">
+        <input type="text" class="form-control" name="weight" placeholder="Enter weight in kg">
+        <span class="input-group-text">kg</span>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="mb-3">
+      <label class="form-label">Blood Pressure</label>
+      <div class="input-group">
+        <input type="text" class="form-control" name="blood_pressure" placeholder="Enter blood pressure in mmHg">
+        <span class="input-group-text">mmHg</span>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="mb-3">
+      <label class="form-label">Height</label>
+      <div class="input-group">
+        <input type="text" class="form-control" name="height" placeholder="Enter height in meters">
+        <span class="input-group-text">m</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="mb-3">
+      <label class="form-label">Pulse Rate</label>
+      <div class="input-group">
+        <input type="text" class="form-control" name="pulse_rate" placeholder="Enter pulse rate per minute">
+        <span class="input-group-text">/min</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-4">
+    <div class="mb-3">
+      <label for="skin" class="form-label">Skin</label>
+      <select class="form-select" id="skin" name="skin">
+        <option value="" selected disabled>Select Skin Condition</option>
+        <option value="normal">Normal</option>
+        <option value="pale">Pale</option>
+        <option value="yellowish">Yellowish</option>
+        <option value="hematoma">Hematoma</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="mb-3">
+      <label for="extremities" class="form-label">Extremities</label>
+      <select class="form-select" id="extremities" name="extremities">
+        <option value="" selected disabled>Select Extremities Condition</option>
+        <option value="normal">Normal</option>
+        <option value="edema">Edema</option>
+        <option value="varicosities">Varicosities</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="mb-3">
+      <label for="conjunctiva" class="form-label">Conjunctiva</label>
+      <select class="form-select" id="conjunctiva" name="conjunctiva">
+        <option value="" selected disabled>Select Conjunctiva Appearance</option>
+        <option value="normal">Normal</option>
+        <option value="pale">Pale</option>
+        <option value="yellowish">Yellowish</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="mb-3">
+      <label for="neck" class="form-label">Neck</label>
+      <select class="form-select" id="neck" name="neck">
+        <option value="" selected disabled>Select Neck Condition</option>
+        <option value="normal">Normal</option>
+        <option value="neck_mass">Neck Mass</option>
+        <option value="enlarged_lymph_nodes">Enlarged Lymph Nodes</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="mb-3">
+      <label for="breast" class="form-label">Breast</label>
+      <select class="form-select" id="breast" name="breast">
+        <option value="" selected disabled>Select Breast Condition</option>
+        <option value="normal">Normal</option>
+        <option value="mass">Mass</option>
+        <option value="nipple_discharge">Nipple Discharge</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="mb-3">
+      <label for="abdomen" class="form-label">Abdomen</label>
+      <select class="form-select" id="abdomen" name="abdomen">
+        <option value="" selected disabled>Select Abdomen Condition</option>
+        <option value="normal">Normal</option>
+        <option value="abdominal_mass">Abdominal Mass</option>
+        <option value="varicosities">Varicosities</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-6">
+    <div class="mb-3">
+      <label class="form-label">Pelvic Examination (for IUD Acceptors)</label>
+      <div class="input-group">
+        <select class="form-select" name="pelvic_examination">
+          <option selected disabled>Select</option>
+          <option value="normal">Normal</option>
+          <option value="mass">Mass</option>
+          <option value="abnormal_discharge">Abnormal Discharge</option>
+          <!--<option value="cervical_abnormalities">Cervical Abnormalities</option>-->
+          <option value="cervical_abnormalities" data-show-subchoices="true" data-subchoices-id="cervical_abnormalities_findings">Cervical Abnormalities</option>
+          <!--option value="cervical_consistency">Cervical Consistency</option>-->
+          <option value="cervical_consistency" data-show-subchoices="true" data-subchoices-id="cervical_consistency_findings">Cervical Consistency</option>
+          <option value="cervical_tenderness">Cervical Tenderness</option>
+          <option value="adnexal_mass_tenderness">Adnexal Mass / Tenderness</option>
+          <!--<option value="uterine_position">Uterine Position</option>-->
+          <option value="uterine_position" data-show-subchoices="true" data-subchoices-id="uterine_position_findings">Uterine Position</option>
+          <!--<option value="uterine_depth">Uterine Depth</option>-->
+          <option value="uterine_depth" data-show-subchoices="true" data-subchoices-id="uterine_depth_input">Uterine Depth</option>
+        </select>
+      </div>
+      <input type="text" class="form-control" name="pelvic_input" style="display: none;">
+    </div>
+  </div>
+
+  <div class="col-6" id="cervical_abnormalities_findings" style="display: none;">
+    <label class="form-label">Findings for Cervical Abnormalities:</label>
+    <select class="form-select" name="cervical_condition">
+      <option value="" disabled selected>Select a finding</option>
+      <option value="warts">Warts</option>
+      <option value="polyp_cyst">Polyp or Cyst</option>
+      <option value="inflammation_erosion">Inflammation or Erosion</option>
+      <option value="bloody_discharge">Bloody Discharge</option>
+    </select>
+  </div>
+
+  <div class="col-6" id="cervical_consistency_findings" style="display: none;">
+  <label class="form-label">Consistency for Cervical Consistency:</label>
+  <select class="form-select" name="cervical_consistency_condition">
+  <option value="" disabled selected>Select a finding</option>
+      <option value="firm">Firm</option>
+    <option value="soft">Soft</option>
+  </select>
+</div>
+
+<div class="col-6 mb-3" id="uterine_position_findings" style="display: none;">
+    <label class="form-label">Position for Uterine Position:</label>
+    <select class="form-select" name="uterine_position_condition">
+      <option value="mid">Mid</option>
+      <option value="anteflexed">Anteflexed</option>
+      <option value="retroflexed">Retroflexed</option>
+    </select>
+</div>
+
+<div id="uterine_depth_input" style="display: none;">
+  <div class="col-6">
+    <div class="mb-3">
+      <label class="form-label">Uterine Depth</label>
+      <div class="input-group">
+        <input type="text" class="form-control" name="uterine_depth" placeholder="Enter uterine depth in cm">
+        <span class="input-group-text">cm</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>

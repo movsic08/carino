@@ -1,0 +1,19 @@
+.custom-small-btn {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.7rem; 
+}
+
+.add-assessment-btn {
+    background-color: #164863;
+    color: #fff;
+}
+.parameter-header {
+    background-color: #9EB8D9;
+}
+.btn-view-all {
+    font-size: 0.75rem; 
+}
+
+.pagination-link i {
+    font-size: 1.5rem;
+}

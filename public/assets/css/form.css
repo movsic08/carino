@@ -1,0 +1,108 @@
+.medical-form-1 {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.medical-form-1 span {
+  display: inline-block;
+  width: 500px;
+}
+
+#specifyLabel {
+  display: none;
+}
+
+#specifyInput {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.form-check-input[type="radio"] {
+  border-color: initial;
+}
+
+.form-check-input[type="radio"][value="no"]:checked {
+  background-color: #fd3550;
+  border-color: #fd3550;
+}
+
+.form-check-input[type="radio"][value="yes"]:checked {
+  background-color: #15ca20;
+  border-color: #15ca20;
+}
+
+
+/* Styles for the Medical Form 2 */
+.medical-form-2 {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.medical-form-2 ul li span {
+  display: inline-block;
+}
+
+.medical-form-2 input[type="radio"] {
+  margin-right: 5px;
+}
+
+#specifyLabel,
+#specifyInput {
+  display: none;
+}
+
+#yesRadio:checked ~ #specifyLabel,
+#yesRadio:checked ~ #specifyInput {
+  display: inline;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-left: 10px;
+}
+
+/* Styles for the Medical Form 3 */
+.medical-form-3 {
+  margin-left: 20px;
+}
+
+.medical-form-3 h6.mb-3 {
+  text-transform: uppercase;
+}
+
+.medical-form-3 ul li span {
+  display: inline-block;
+  width: 350px;
+}
+
+.medical-form-3 ul li label {
+  font-style: italic;
+  margin-left: 20px;
+}
+
+.medical-form-3 ul li input[type="radio"],
+.medical-form-3 ul li input[type="checkbox"] {
+  font-style: italic;
+  margin-left: 20px;
+}
+/* Styles for the Medical Form 4 */
+.medical-form-4 {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.medical-form-4 .input-group-text {
+  display: flex;
+  justify-content: center;
+  padding: .375rem .75rem;
+}
+
+.form-control {
+  width: 100%;
+}
+
+.form-select {
+  width: 100%;
+}
